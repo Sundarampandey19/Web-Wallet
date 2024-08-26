@@ -1,10 +1,9 @@
 export default async function  getSepEth(walletAddress,chain){
-    let url=""
+    let url=""    
     if(chain==="Sepolia"){
-        url = "https://eth-sepolia.g.alchemy.com/v2/TDOEevAe5ZwlElhfxxuesXjXjrrRG09i"
+        url = import.meta.env.VITE_SEPOLIA_RPC_URL
     }else{
-        url = "https://eth-mainnet.g.alchemy.com/v2/TDOEevAe5ZwlElhfxxuesXjXjrrRG09i"
-
+        url = import.meta.env.VITE_MAINNET_RPC_URL
     }
     const response = await fetch(url, {
         method: 'POST',
